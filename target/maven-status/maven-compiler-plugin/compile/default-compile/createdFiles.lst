@@ -1,0 +1,11 @@
+com\mycompany\exam_seating_arrangement\Servlet\LoginServlet.class
+com\mycompany\exam_seating_arrangement\Servlet\LogoutServlet.class
+com\mycompany\exam_seating_arrangement\Dao\StudentDao.class
+com\mycompany\exam_seating_arrangement\Servlet\RegisterServlet.class
+com\mycompany\exam_seating_arrangement\entities\Student.class
+com\mycompany\exam_seating_arrangement\resources\JakartaEE10Resource.class
+com\mycompany\exam_seating_arrangement\entities\ClassRoom.class
+com\mycompany\exam_seating_arrangement\Servlet\AddRoomDetails.class
+com\mycompany\exam_seating_arrangement\Dao\ClassRoomDao.class
+com\mycompany\exam_seating_arrangement\JakartaRestConfiguration.class
+com\mycompany\exam_seating_arrangement\helper\FactoryProvider.class
