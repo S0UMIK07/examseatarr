@@ -49,8 +49,8 @@
         
     </head>
     <body>
-        <div class="row" style="margin-left: 5px;margin-right: 5px;margin-top: 2px;">
-  <div class="col-sm-2">
+        <div class="row" style="margin-left: 5px;margin-right: 5px;margin-top: 8px;">
+  <div class="col-md-2">
     <div class="card">
       <div class="card-body">
         <h5 class="card-header">Class Room Number</h5>
@@ -68,12 +68,12 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-5">
+  <div class="col-md-5">
     <div class="card">
       <div class="card-body">
         <h5 class="card-header">Class Room Details</h5>
         <%if(cl1!=null){%>
-        <div style="margin: 15px 15px 15px 15px;">
+        <div style="margin: 15px 0px 15px 15px;">
         <p class="card-text"><b>ClassRoom Number:</b> <%=cl1.getClassroomNumber()%></p>
         <p class="card-text"><b>ClassRoom Capacity:</b> <%=cl1.getNumberOfRows()*cl1.getNumberofColumns()%></p>
         <p class="card-text"><b>Total Student Present</b> <%=cl1.getStudents().size()%></p>
@@ -81,12 +81,17 @@
         <p class="card-text"><b>Exam Duration:</b> <%=cl1.getExamDuration()%></p>
         <p class="card-text"><b>Exam Time:</b> <%=cl1.getExamTime()%></p>
         <p class="card-text"><b>Invigilators Name:</b> <%=cl1.getAssignedInvigilators()%></p>
-        <%}%>
         </div>
+        <%}else{%>
+        <div class="card-body">
+        <p class="font-monospace" style="color: #0000ff; text-align: center;">Click Room Number For Display The Room Details</p>
+        </div>
+        <%}%>
+        
       </div>
     </div>
   </div>
-            <div class="col-sm-5">
+            <div class="col-md-5">
     <div class="card">
         <div class="card-body">
           <h5 class="card-header" style="text-align: center;">Student Details</h5>
@@ -130,6 +135,8 @@ List<Integer> firstList=listOfStudentsAsList.get(0);
 List<Integer> secondList=null;
 if(listOfBranches.size()>1){
 secondList=listOfStudentsAsList.get(1);
+}else if(listOfStudentsAsList.size()==1){
+secondList=new ArrayList<>();
 }
 
 
@@ -144,7 +151,7 @@ secondList=listOfStudentsAsList.get(1);
 if(cl1.getStudents().size()== (cl1.getNumberofColumns()*cl1.getNumberOfRows())){ %> 
             <p class="font-monospace" style="color: #00ff33; text-align: center;">The ClassRoom is Full</p>
             <% }else{ %>
-            <p class="font-monospace" style="color: #ffff33; text-align: center;">The ClassRoom is Partially full</p>
+            <p class="font-monospace" style="color:#cc0df6; text-align: center;">The ClassRoom is Partially full</p>
             <% } %>
             <p class="font-monospace" style="color: #0000ff; text-align: center;">There are <%=studentsByBranch.size()%> Branches Present In The Class</p>
         
@@ -179,15 +186,24 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
       margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(1)%></button>
             </form>
             <%
-                }t++;
-            }
+                }else{
+                 if(secondList.size()!=0){
             %>
+            <button type="submit" style="border: none; padding: 2px 2px 2px 2px;">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+      margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(1)%></button>
             
-            
-            
-
             <%
-                }
+                }else{
+%>
+            <button type="submit" style="border: none; padding: 2px 2px 2px 2px;">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+      margin: 2px 20px 2px 12px;"/><br>Null</button>
+            
+            <%
+}
+}
+t++;
+}
+}
 %>
             </div>
             <%
@@ -197,7 +213,11 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
         
         
         
-        <%}}%>
+        <%}}else{%>
+        <div class="card-body">
+        <p class="font-monospace" style="color: #0000ff; text-align: center;">Click Room Number For Display The Student Arrangement</p>
+        </div>
+        <%}%>
       </div>
     </div>
   </div>
