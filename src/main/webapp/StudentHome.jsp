@@ -50,6 +50,7 @@
       <%
           }else{
       %>
+      <p class="font-monospace" style="color: #33cc00">The ClassRoom is Alloted</p>
       <%
           }
       %>
@@ -68,7 +69,11 @@
       <%
           }else{
       %>
-      
+      <p class="card-text"><b>ClassRoom Number:</b>&nbsp;&nbsp;<%=student.getClassRoom().getClassroomNumber()%></p>
+      <p class="card-text"><b>Exam Time:</b>&nbsp;&nbsp;<%=student.getClassRoom().getExamTime()%></p>
+      <p class="card-text"><b>Exam duration:</b>&nbsp;&nbsp;<%=student.getClassRoom().getExamDuration()%></p>
+      <p class="card-text"><b>Exam date</b>&nbsp;&nbsp;<%=student.getClassRoom().getExamDate()%></p>
+      <p class="card-text"><b>Invigilator name:</b>&nbsp;&nbsp;<%=student.getClassRoom().getAssignedInvigilators()%></p>      
       <%
           }
       %>

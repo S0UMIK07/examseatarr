@@ -3,6 +3,10 @@
     Created on : Dec 5, 2023, 10:30:31 PM
     Author     : 91731
 --%>
+<%@page import="com.mycompany.exam_seating_arrangement.entities.ClassRoom"%>
+<%@page import="java.util.List"%>
+<%@page import="com.mycompany.exam_seating_arrangement.Dao.ClassRoomDao"%>
+<%@page import="com.mycompany.exam_seating_arrangement.helper.FactoryProvider"%>
 <%@page import="com.mycompany.exam_seating_arrangement.entities.Student"%>
 <%
     Student s4=(Student)session.getAttribute("current-user");
@@ -26,6 +30,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%@include file="components/common_css_js.jsp" %>
+        <%@include file="components/customCss.jsp" %>
         <%@include file="components/navbar.jsp" %>
         <%@include file="components/msg.jsp" %>
     </head>
@@ -37,7 +42,9 @@
       <div class="card-body">
         <h5 class="card-title">Add Student Details</h5>
         <p class="card-text">Here we modify or allot the room to the students </p>
-        <a href="#" class="btn btn-primary">Modify</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SelectRoom">
+  Modify
+</button>
       </div>
     </div>
   </div>
@@ -119,7 +126,47 @@
   </div>
 </div> 
         
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="SelectRoom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select Room Number</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body" style="text-align:center">
+        <%
+            ClassRoomDao classRoomDao =new ClassRoomDao(FactoryProvider.getFactory());
+            List<ClassRoom> crs=classRoomDao.getAllClassRoom();
+            int i=0;
+            for(ClassRoom cl:crs){
+        %>
         
+        <form method="post" action="AssignStudents.jsp">
+            <input type="hidden" value="<%=cl.getClassroomNumber()%>" name="Roomnumber">
+            <button class="cshover" type="submit"><%=cl.getClassroomNumber()%></button>
+        </form>
+        <%
+            }
+        %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
        
         
         
