@@ -51,10 +51,11 @@
 the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
 if there is 20 put 20 */
 .animation {
+    text-align: center;
   font: bold 200% Consolas, Monaco, monospace;
   border-right: .1em solid black;
   width: 22ch;
-  margin: 2em 2em;
+  margin: 4em auto;
   white-space: nowrap;
   overflow: hidden;
   -webkit-animation: typing 3s steps(22, end),
@@ -75,9 +76,7 @@ if there is 20 put 20 */
             %>
             <div class="animation">The ClassRoom is Full</div>
             <br>
-            <div style="text-align: center">
-                <button type="button" class="btn btn-danger">Reset</button>
-            </div>
+            
             <%
             }else{
         %>

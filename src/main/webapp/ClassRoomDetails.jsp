@@ -73,6 +73,7 @@
       <div class="card-body">
         <h5 class="card-header">Class Room Details</h5>
         <%if(cl1!=null){%>
+        <div style="margin: 15px 15px 15px 15px;">
         <p class="card-text"><b>ClassRoom Number:</b> <%=cl1.getClassroomNumber()%></p>
         <p class="card-text"><b>ClassRoom Capacity:</b> <%=cl1.getNumberOfRows()*cl1.getNumberofColumns()%></p>
         <p class="card-text"><b>Total Student Present</b> <%=cl1.getStudents().size()%></p>
@@ -81,6 +82,7 @@
         <p class="card-text"><b>Exam Time:</b> <%=cl1.getExamTime()%></p>
         <p class="card-text"><b>Invigilators Name:</b> <%=cl1.getAssignedInvigilators()%></p>
         <%}%>
+        </div>
       </div>
     </div>
   </div>
@@ -162,8 +164,8 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
             <form action="SeeStudentDetails.jsp" method="post">
                 <input type="hidden" name="Roll" value="<%=firstList.get(s)%>">
                 <input type="hidden" name="Branch" value="<%=listOfBranches.get(0)%>">
-                <button type="submit" style="border: none"><%=firstList.get(s)%><br><%=listOfBranches.get(0)%><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
-      margin: 10px 20px 20px 20px;"/></button>
+                <button type="submit" style="border: none; padding: 2px 2px 2px 2px;"><%=firstList.get(s)%><br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+      margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(0)%></button>
             </form>
             <%
                 }s++;
@@ -173,8 +175,8 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
             <form action="SeeStudentDetails.jsp" method="post">
                 <input type="hidden" name="Roll" value="<%=secondList.get(t)%>">
                 <input type="hidden" name="Branch" value="<%=listOfBranches.get(1)%>">
-                <button type="submit" style="border: none"><%=secondList.get(t)%><br><%=listOfBranches.get(1)%><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
-      margin: 10px 20px 20px 20px;"/></button>
+                <button type="submit" style="border: none; padding: 2px 2px 2px 2px;"><%=secondList.get(t)%><br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+      margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(1)%></button>
             </form>
             <%
                 }t++;
