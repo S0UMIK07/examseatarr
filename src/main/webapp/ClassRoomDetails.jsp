@@ -160,6 +160,7 @@ if(cl1.getStudents().size()== (cl1.getNumberofColumns()*cl1.getNumberOfRows())){
             <%
             int s=0;
             int t=0;
+            int u=0;
 for(int i=0;i<cl1.getNumberOfRows();i++){
             %> <div style="display: flex">
             <%
@@ -171,31 +172,46 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
             <form action="SeeStudentDetails.jsp" method="post">
                 <input type="hidden" name="Roll" value="<%=firstList.get(s)%>">
                 <input type="hidden" name="Branch" value="<%=listOfBranches.get(0)%>">
-                <button type="submit" style="border: none; padding: 2px 2px 2px 2px;"><%=firstList.get(s)%><br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+                <button type="submit" style="border: none; padding: 2px 2px 2px 2px; background-color: #8780A7"><%=firstList.get(s)%><br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
       margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(0)%></button>
             </form>
             <%
-                }s++;
+                }else{
+                 if(firstList.size()!=0){
+            %>
+            <button type="submit" style="border: none; padding: 2px 2px 2px 2px; background-color: #8780A7">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+      margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(0)%></button>
+            
+            <%
+                }else{
+%>
+            <button type="submit" style="border: none; padding: 2px 2px 2px 2px; background-color: #8780A7">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+      margin: 2px 20px 2px 12px;"/><br>Null</button>
+            
+            <%
+}
+}
+s++;
             }else{
             if(t<secondList.size()){
             %>
             <form action="SeeStudentDetails.jsp" method="post">
                 <input type="hidden" name="Roll" value="<%=secondList.get(t)%>">
                 <input type="hidden" name="Branch" value="<%=listOfBranches.get(1)%>">
-                <button type="submit" style="border: none; padding: 2px 2px 2px 2px;"><%=secondList.get(t)%><br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+                <button type="submit" style="border: none; padding: 2px 2px 2px 2px; background-color: #B7B4C8"><%=secondList.get(t)%><br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
       margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(1)%></button>
             </form>
             <%
                 }else{
                  if(secondList.size()!=0){
             %>
-            <button type="submit" style="border: none; padding: 2px 2px 2px 2px;">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+            <button type="submit" style="border: none; padding: 2px 2px 2px 2px; background-color: #B7B4C8">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
       margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(1)%></button>
             
             <%
                 }else{
 %>
-            <button type="submit" style="border: none; padding: 2px 2px 2px 2px;">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
+            <button type="submit" style="border: none; padding: 2px 2px 2px 2px; background-color: #B7B4C8">Null<br><img src="img/studenticon.png"  alt="studenticon" style="width: 20px; height:25px ;
       margin: 2px 20px 2px 12px;"/><br>Null</button>
             
             <%
@@ -203,10 +219,16 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
 }
 t++;
 }
+if(s+t>cl1.getStudents().size()){
+break;
+}
 }
 %>
             </div>
             <%
+                if(s+t>cl1.getStudents().size()){
+break;
+}
                 }
             %>
         </div>

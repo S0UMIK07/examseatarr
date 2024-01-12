@@ -12,7 +12,7 @@
   width: 8em;
   height: 2.6em;
   line-height: 2.5em;
-  margin: 20px;
+  margin: 10px;
   position: relative;
   overflow: hidden;
   border: 2px solid var(--color);

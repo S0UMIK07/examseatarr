@@ -133,9 +133,14 @@ if there is 20 put 20 */
                       }
                   %>
                   <h6>There are total <b><%=lis.size()%></b> Students in <b><%=bra%></b><br>There are <b><%=n%></b> Students who are not assigned any ClassRoom</h6>
+                  <h6>You Can Assign up to <b><%=(classRoom.getNumberOfRows()*classRoom.getNumberofColumns())/2%></b> students from one Branch<br> <!-- comment -->
+                      There are <b><%=studentDao.getAllStudentByBranchAndRoomNumber(bra, Rnum).size()%></b> Students Present in This Branch
+                  </h6>
               </div>
               <div class="card-body">
-                  <h6>Enter Number of Students you want to assign</h6>
+                  <h6>Enter Number of Students you want to assign<br>
+                      <p class="font-monospace" style="color: #7A64E1">You can Assign up to <b><%=(classRoom.getNumberOfRows()*classRoom.getNumberofColumns())/2%>-<%=studentDao.getAllStudentByBranchAndRoomNumber(bra, Rnum).size()%></b>=<b><%=((classRoom.getNumberOfRows()*classRoom.getNumberofColumns())/2)-studentDao.getAllStudentByBranchAndRoomNumber(bra, Rnum).size()%></b> students</p>
+                  </h6>
                   <div class="inputGroup">
                       <input type="number" autocomplete="off" name="inputNumber" required>
                       <input type="hidden" name="Branch" value="<%=bra%>">
