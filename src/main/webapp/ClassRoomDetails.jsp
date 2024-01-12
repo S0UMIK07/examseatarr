@@ -176,6 +176,7 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
       margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(0)%></button>
             </form>
             <%
+                s++;
                 }else{
                  if(firstList.size()!=0){
             %>
@@ -191,7 +192,7 @@ for(int i=0;i<cl1.getNumberOfRows();i++){
             <%
 }
 }
-s++;
+
             }else{
             if(t<secondList.size()){
             %>
@@ -202,6 +203,7 @@ s++;
       margin: 2px 20px 2px 12px;"/><br><%=listOfBranches.get(1)%></button>
             </form>
             <%
+                t++;
                 }else{
                  if(secondList.size()!=0){
             %>
@@ -217,16 +219,16 @@ s++;
             <%
 }
 }
-t++;
+
 }
-if(s+t>cl1.getStudents().size()){
+if(s+t>=cl1.getStudents().size()){
 break;
 }
 }
 %>
             </div>
             <%
-                if(s+t>cl1.getStudents().size()){
+                if(s+t>=cl1.getStudents().size()){
 break;
 }
                 }
