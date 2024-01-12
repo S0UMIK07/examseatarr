@@ -51,11 +51,11 @@
   </div>
   <div class="mb-3">
     <label for="RollNumber" class="form-label">Roll Number</label>
-    <input type="password" name="RollNumber" placeholder="Enter RollNumber" class="form-control" id="RollNumber" required>
+    <input type="number" name="RollNumber" placeholder="Enter RollNumber" class="form-control" id="RollNumber" required>
   </div>
         <div class="mb-3">
     <label for="RegistrationNumber" class="form-label">Registration Number</label>
-    <input name="RegistrationNumber" placeholder="Enter Registration Number" class="form-control" id="RegistrationNumber" required>
+    <input name="RegistrationNumber" type="number" placeholder="Enter Registration Number" class="form-control" id="RegistrationNumber" required>
   </div>
     <div class="mb-3">
     <label for="FatherName" class="form-label">Father's Name</label>
