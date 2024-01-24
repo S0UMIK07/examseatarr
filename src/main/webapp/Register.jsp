@@ -84,7 +84,7 @@ a {
 
                     <div class="mb-3">
                         <label for="StudentName" class="form-label">Student Name</label>
-                        <input type="text" class="form-control" id="StudentName" placeholder="Enter Your Name" required>
+                        <input type="text" class="form-control" id="StudentName" placeholder="Enter Your Name" name="StudentName" required>
                     </div>
 
                    <div class="mb-3">
@@ -105,37 +105,37 @@ a {
 
                     <div class="mb-3">
                         <label for="Date_of_Birth" class="form-label">Date of Birth</label>
-                        <input type="date" class="form-control" id="Date_of_Birth" required>
+                        <input type="date" class="form-control" id="Date_of_Birth" name="Date_of_Birth" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="RollNumber" class="form-label ">Roll Number</label>
-                        <input type="number" class="form-control" id="RollNumber" placeholder="Enter Roll Number" required>
+                        <input type="number" class="form-control" id="RollNumber" placeholder="Enter Roll Number" name="RollNumber" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="RegistrationNumber" class="form-label ">Registration Number</label>
-                        <input type="number" class="form-control" id="RegistrationNumber" placeholder="Enter Registration Number" required>
+                        <input type="number" class="form-control" id="RegistrationNumber" placeholder="Enter Registration Number" name="RegistrationNumber" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="FatherName" class="form-label">Father's Name</label>
-                        <input type="text" class="form-control" id="FatherName" placeholder="Enter Father's Name" required>
+                        <input type="text" class="form-control" id="FatherName" placeholder="Enter Father's Name" name="FatherName" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="PhoneNumber" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="PhoneNumber" placeholder="Enter Phone Number" required>
+                        <input type="tel" class="form-control" id="PhoneNumber" placeholder="Enter Phone Number" name="PhoneNumber" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="Address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="Address" placeholder="Enter Address" required>
+                        <input type="text" class="form-control" id="Address" placeholder="Enter Address" name="Address" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="Branch" class="form-label">Branch</label>
-                        <input type="text" class="form-control" id="Branch" placeholder="Enter Branch" required>
+                        <input type="text" class="form-control" id="Branch" placeholder="Enter Branch" name="Branch" required>
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
